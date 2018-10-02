@@ -28,30 +28,32 @@ Run program: ./app/shell-app
 ## Run Valgrind test
 
 To install valgrind
+```
 sudo apt install valgrind
-
+```
 To install Kcachegrind
+```
 sudo apt install kcachegrind
-
-For identifying errors, memory leaks using valgrind:
-
+```
+For identifying errors, memory leaks using valgrind
+```
 cd <path to repository>
 valgrind --tool=memcheck --leak-check=full ./build/app/shell-app 
-
+```
 Function and Memory Profiling:
-
+```
 valgrind --tool=callgrind ./build/app/shell-app
 valgrind --tool=massif ./build/app/shell-app
-
+```
 The above two commands produce a callgrind.out and massif.out files respectively.
 
 To visualize callgrind.out file we use Kcachegrind.
-
+```
 kcachegrind
-
+```
 In the application that opens up, click on open menu. Select the callgrind.out file from your repository.
 
 To visualize massif.out file in the terminal.
-
+```
 ms_print massif.out.<process id>
-
+```
